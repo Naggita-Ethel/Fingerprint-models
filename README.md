@@ -13,7 +13,9 @@
 - [License](#license)
 
 ## Introduction
-Welcome to the Recess Project Template! This repository serves as a structured template for working on your `recess projects` in `groups of five`. It provides guidelines and a well-organized file structure to help you efficiently collaborate, manage your individual work, and deliver successful group projects.
+These models were developed using Convolutional Neural Networks (CNN) and ResNet Neural Networks. Various strategies including regularization, data augmentation, early stopping, dropout and random oversampling, were employed to address challenges posed by class imbalance and overfitting.
+
+
 
 ### Collaboration Process
 ```mermaid
