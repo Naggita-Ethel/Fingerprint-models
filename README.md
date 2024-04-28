@@ -13,8 +13,10 @@
 - [License](#license)
 
 ## Introduction
-These models were developed using Convolutional Neural Networks (CNN) and ResNet Neural Networks. Various strategies including regularization, data augmentation, early stopping, dropout and random oversampling, were employed to address challenges posed by class imbalance and overfitting.
+These models were developed using Convolutional Neural Networks (CNN) and ResNet Neural Networks. Various strategies including regularization, data augmentation, early stopping, dropout and random oversampling, were employed to address challenges posed by class imbalance and overfitting. The dataset used was the sokoto conventry fingerprint dataset obtained from kaggle. This contains 6000 real images, 17931 easy altered images, 17067 medium altered images and 14272 hard altered images. Evaluation techniques like the AUC-ROC curve and classification reports were used.
 
+Link to the dataset
+https://www.kaggle.com/datasets/ruizgara/socofing
 
 
 ### Collaboration Process
