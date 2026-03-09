@@ -1,98 +1,64 @@
-# Recess Project Template
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-![Project Logo](Recess_Project_Template/resources/images/logo.png)
-
-## Table of Contents
-- [Introduction](#introduction)
-- [Documentation](#documentation)
-- [Reports and Presentations](#reports-and-presentations)
-- [Resources](#resources)
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-These models were developed using Convolutional Neural Networks (CNN) and ResNet Neural Networks. Various strategies including regularization, data augmentation, early stopping, dropout and random oversampling, were employed to address challenges posed by class imbalance and overfitting. The dataset used was the sokoto conventry fingerprint dataset obtained from kaggle. This contains 6000 real images, 17931 easy altered images, 17067 medium altered images and 14272 hard altered images. Evaluation techniques like the AUC-ROC curve and classification reports were used.
-
-Link to the dataset
-https://www.kaggle.com/datasets/ruizgara/socofing
-
-
-### Collaboration Process
-```mermaid
-flowchart LR
-
-subgraph "Repository"
-  Repo((Repository))
-end
-
-subgraph "User A"
-  fork[Fork]
-  branchA[Branch A]
-end
-
-subgraph "User B"
-  branchB[Branch B]
-end
-
-subgraph "User C"
-  branchC[Branch C]
-end
-
-subgraph "Pull Request"
-  pullRequest[Pull Request]
-end
-
-Repo --> fork
-fork --> branchA
-fork --> branchB
-fork --> branchC
-
-branchA --> pullRequest
-branchB --> pullRequest
-branchC --> pullRequest
-
 pullRequest --> Repo
-```
 
----
->> Note: Each Group member has to Own a Branch named as his/her name 
+# Fingerprint Models & Codebase Overview
 
-## Documentation
-Find detailed project documentation in the [docs](Recess_Project_Template/docs) folder. It includes:
-- [Project Overview](./docs/README.md): Get an overview of the project's goals, objectives, and how to use this template effectively.
-- [Project Guidelines](./docs/project_guidelines.md): Learn about the best practices for group collaboration, code organization, and documentation.
-  
-- ## Reports and Presentations
+## Project Summary
+This repository contains advanced fingerprint analysis models and code for biometric identification, gender classification, and detection of altered fingerprints. The project leverages deep learning architectures (CNNs, ResNet) and robust data engineering to address real-world challenges in fingerprint recognition.
 
-Submit your final project reports and group presentation in the [reports](Recess_Project_Template/reports) folder:
+## Models & Structure
 
-- Individual project reports: [reports/report_Student1.pdf](Recess_Project_Template/reports/report_Student1.pdf) - [reports/report_Student5.pdf](Recess_Project_Template/reports/report_Student5.pdf)
-- Group presentation: [reports/group_presentation.pptx](Recess_Project_Template/reports/group_presentation.pptx)
+### 1. Altered vs Real Fingerprint Detection
+- **Purpose:** Distinguish between genuine and altered fingerprints (Easy, Medium, Hard levels).
+- **Files:**
+  - `src/group_work/Altered vs real/Altered Easy vs Real.ipynb`
+  - `src/group_work/Altered vs real/Medium altered vs real.ipynb`
+  - `src/group_work/Altered vs real/Hard Altered vs Real.ipynb`
+  - Model weights: `RVA.keras`, `RVA2.keras`, `RVA3.keras`
+- **Approach:** Uses CNNs and ResNet, with data augmentation, regularization, and oversampling to handle class imbalance. Evaluation via AUC-ROC, confusion matrix, and classification reports.
 
-## Resources
-The [resources](Recess_Project_Template/resources) folder contains additional resources for the project, including:
-- [Images](Recess_Project_Template/resources/images): Store images related to your project (e.g., diagrams, graphics).
-- [Datasets](Recess_Project_Template/resources/datasets): If applicable, keep datasets used in your project for reproducibility.
+### 2. Fingerprint Identification
+- **Purpose:** Identify individual fingerprints and finger types (Easy, Medium, Hard levels).
+- **Files:**
+  - `src/group_work/Fingerprint Identification/Easy_Medium_ID_Fingername_identification.ipynb`
+  - `src/group_work/Fingerprint Identification/Hard_ID_Fingername_identification.ipynb`
+- **Approach:** Custom image parsing, label extraction, and multi-class classification using deep learning. Handles subject ID and finger type mapping.
 
-## Getting Started
-To begin your recess project, use the `"Use this template"` button to create your individual project repository based on this template. Follow these steps to get started:
+### 3. Gender Classification from Fingerprints
+- **Purpose:** Predict gender from fingerprint images, including altered samples.
+- **Files:**
+  - `src/group_work/Gender Classification Model/1st Model(Altered easy).ipynb`
+  - `src/group_work/Gender Classification Model/AlteredMedium.ipynb`
+  - `src/group_work/Gender Classification Model/HardAltered.ipynb`
+  - Model weights: `Gender1.keras`, `Gender2.keras`, `Gender3.keras`
+- **Approach:** CNN-based models, advanced preprocessing, and random oversampling for imbalanced data. Evaluation via confusion matrix and classification report.
 
-1. Clone your individual project repository to your local machine.
-2. Collaborate with your group members on the group project within the [src/group_work](Recess_Project_Template/src/group_work) folder.
-3. Work on your individual contributions within your respective folders in [src/individual_work](./src/individual_work).
-4. Regularly commit and push changes to your repository.
-5. Create pull requests for group project changes and get feedback from your team.
+## Dataset
+- **Source:** [SOCOFing - Sokoto Coventry Fingerprint Dataset](https://www.kaggle.com/datasets/ruizgara/socofing)
+- **Composition:**
+  - Real: 6,000 images
+  - Altered Easy: 17,931 images
+  - Altered Medium: 17,067 images
+  - Altered Hard: 14,272 images
+- **Location:** `Recess_Project_Template/resources/datasets/dataset.csv`
 
-## ❗️ Note:
-- The project will run for 2 weeks starting on 24th July 2022 to 11th August 2023 till 11:59 pm.
-- Email us: jeff.geoff.cis@gmail.com cc. ndigezzalivingstone2@gmail.com and send us the link for the GitHub Repository!
+## Key Technologies
+- Python, TensorFlow, Keras, scikit-learn, OpenCV, imbalanced-learn
+- Deep learning (CNN, ResNet), image augmentation, regularization, early stopping
 
-## Contributing
-If you want to contribute to this project template or suggest improvements, please follow the guidelines outlined in [CONTRIBUTING.md](./CONTRIBUTING.md). We welcome your contributions and value your feedback!
+## Usage
+1. Clone the repository.
+2. Explore notebooks in `src/group_work/` for model training, evaluation, and experimentation.
+3. Use `.keras` model files for inference or further training.
+4. Dataset and images are in `resources/datasets` and `resources/images`.
+
+## Project Organization
+- **src/group_work/**: All collaborative model development and experiments.
+- **resources/**: Datasets and images for reproducibility.
+- **docs/**: Project documentation and guidelines.
+- **reports/**: Project reports and presentations.
 
 ## License
-This project is licensed under the [MIT License](./LICENSE). Feel free to use and modify this template for your own recess projects.
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
 
 ---
+For questions or collaboration, please open an issue or contact the maintainers.
